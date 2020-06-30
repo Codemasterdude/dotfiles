@@ -1,3 +1,4 @@
+export TERM="xterm-256color"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -7,7 +8,31 @@
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_MODE='nerdfont-complete'
+
+POWERLEVEL9K_USER_ICON="\uF415"
+#left and right elements
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
+# context colors
+POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='dodgerblue1' # dodgerblue1
+POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND='white'
+# icons colors
+POWERLEVEL9K_DIR_HOME_VISUAL_IDENTIFIER_COLOR='white'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_VISUAL_IDENTIFIER_COLOR='white'
+# dir paths colors
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='white'
+# time colors
+POWERLEVEL9K_TIME_FOREGROUND='dodgerblue1' # dodgerblue1
+POWERLEVEL9K_TIME_BACKGROUND='white'
+
+# Set list of themes to load
+# Setting this variable when ZSH_THEME=random
+# cause zsh load theme from this variable instead of
+# looking in ~/.oh-my-zsh/themes/
+# An empty array have no effect
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,7 +76,19 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git python sublime last-working-dir)
+plugins=(
+  git
+  gitignore
+  vscode
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+  extract
+  colored-man-pages
+  sudo
+  history
+  catimg
+  chucknorris
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -83,3 +120,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
